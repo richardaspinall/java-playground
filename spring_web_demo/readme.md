@@ -1,16 +1,30 @@
-# Spring Boot Demo
+# Spring Web Demo
 
 **Generated from:**
 
 https://start.spring.io/
 
-## Running the application
+**Dependencies**
+
+Spring Web
+
+## Run
 
 Run: `./gradlew build` (if gradle was chosen in the initilizer)
 
 - A `.jar` will be created in the `build/libs` folder
 
 Run: `java -jar build/libs/*.jar` to run the application
+
+## Configuration
+
+Configuration file location: `/main/resources/application.properties`
+
+Index: `server.servlet.context-path=/myapp`
+
+Port: `server.port=9090`
+
+
 
 ## Structure
 ```
@@ -25,11 +39,13 @@ Run: `java -jar build/libs/*.jar` to run the application
 └── src
 ├── main
 │   ├── java
-│   │   └── org
-│   │       └── hyperskill
-│   │           └── demo
-│   │               └── DemoApplication.java
+│   │   └── com
+│   │       └── example
+│   │           └── spring_web_demo
+│   │               └── SpringWebDemoApplication.java
 │   └── resources
+│       └── static
+│       │   └── index.html
 │       └── application.properties
 └── test
 └── java
@@ -38,7 +54,3 @@ Run: `java -jar build/libs/*.jar` to run the application
 └── demo
 └── DemoApplicationTests.java
 ```
-
-## Beans add on 
-
-https://hyperskill.org/learn/step/14641
