@@ -24,8 +24,6 @@ Index: `server.servlet.context-path=/myapp`
 
 Port: `server.port=9090`
 
-
-
 ## Structure
 ```
 .
@@ -43,6 +41,7 @@ Port: `server.port=9090`
 │   │       └── example
 │   │           └── spring_web_demo
 │   │               └── SpringWebDemoApplication.java
+│   │                       . . .
 │   └── resources
 │       └── static
 │       │   └── index.html
@@ -53,4 +52,40 @@ Port: `server.port=9090`
 └── hyperskill
 └── demo
 └── DemoApplicationTests.java
+```
+
+## Usage
+
+Index: `http://localhost:9090/myapp/`
+
+POST user: `http://localhost:9090/myapp/user`
+```
+curl -d \
+'{ "id": 1, 
+"name": "Scott", 
+"phone": "555-555-555", 
+"enabled": true }' \
+-H "Content-Type: application/json" \
+-X POST http://localhost:9090/myapp/user
+```
+
+POST users: `http://localhost:9090/myapp/users`
+
+```
+curl --location --request POST 'http://localhost:9090/myapp/users' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    {
+        "id": 1,
+        "name": "Scott",
+        "phone": "555-555-555",
+        "enabled": true
+    },
+    {
+        "id": 2,
+        "name": "Richard",
+        "phone": "777-777-777",
+        "enabled": true
+    }
+]'
 ```
